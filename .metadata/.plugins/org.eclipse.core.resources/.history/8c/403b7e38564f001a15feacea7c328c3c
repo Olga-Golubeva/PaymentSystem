@@ -1,0 +1,8 @@
+package lv.olga.employee;
+
+import lv.olga.paysystem.Payee;
+
+public class SalaryEmployee implements Payee {
+	
+
+}
