@@ -1,0 +1,32 @@
+package lv.olga.employee;
+
+import lv.olga.paysystem.Payee;
+
+public abstract class Employee implements Payee {
+	private String name;
+	private Integer bankAccount;
+	
+	protected Double grossWage;
+	protected Double currentBonus;
+	
+	public Employee(String name, Integer bankAccount, Double grossWage) {
+		super();
+		this.name = name;
+		this.bankAccount = bankAccount;
+		this.grossWage = grossWage;
+		currentBonus = 0.0;
+	}
+
+	@Override
+	public Integer bankAccount() {
+		return bankAccount;
+	}
+
+	@Override
+	public String name() {
+		return name;
+	}
+	
+	
+
+}

@@ -1,33 +1,25 @@
 package lv.olga.employee;
 
-import lv.olga.paysystem.Payee;
 
-public class SalaryEmployee implements Payee {
-	
-	private String name;
-	private Integer bankAccount;
-	protected Double grossWage;
+
+public class SalaryEmployee extends Employee {
+
 	
 
 	public SalaryEmployee(String name, Integer bankAccount, Double grossWage) {
-		this.name = name;
-		this.bankAccount = bankAccount;
-		this.grossWage = grossWage;
+		super(name, bankAccount, grossWage);
 	}
 
-	@Override
-	public Integer bankAccount() {
-		return bankAccount;
-	}
-
-	@Override
-	public String name() {
-		return name;
-	}
 
 	@Override
 	public Double grossPayment() {
-		return grossWage;
+		return grossWage + doCurrentBonus();
+	}
+
+	@Override
+	public void giveBonus(Double percentage) {
+		currentBonus += grossWage * (percentage/100.00);
+		
 	}
 	
 

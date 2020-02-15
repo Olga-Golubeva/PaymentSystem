@@ -1,0 +1,40 @@
+package lv.olga.test;
+
+import java.util.Arrays;
+
+import lv.olga.employee.CommissionEmployee;
+import lv.olga.employee.SalaryEmployee;
+import lv.olga.paysystem.PaymentSystem;
+
+public class TestPayment {
+
+	public static void main(String[] args) {
+	PaymentSystem paymentSystem = new PaymentSystem();
+	
+	CommissionEmployee toms = new CommissionEmployee("Toms Ozoliņš", 645638939, 5000.00);
+	paymentSystem.addPayee(toms);
+	CommissionEmployee ieva = new CommissionEmployee("Ieva Berzina", 108956389, 5600.50);
+	paymentSystem.addPayee(ieva);
+		
+	SalaryEmployee dana = new SalaryEmployee("Dana Ozola", 75657393, 3500.60);
+	paymentSystem.addPayee(dana);
+	SalaryEmployee janis = new SalaryEmployee("Janis Berzs", 84059736, 4800.00);
+	paymentSystem.addPayee(janis);
+	
+	// simulate work
+	
+	toms.giveComission(10.2);
+	toms.giveComission(50.3);
+	ieva.giveComission(27.1);
+	ieva.giveComission(52.1);
+	toms.giveComission(8.1);
+	
+	dana.giveBonus(10.0);
+	toms.giveBonus(7.0);
+	
+	
+	paymentSystem.processPayments();
+	paymentSystem.printNames();
+	}
+
+}

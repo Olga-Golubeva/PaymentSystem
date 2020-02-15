@@ -1,0 +1,9 @@
+package lv.olga.employee;
+
+import lv.olga.paysystem.Payee;
+
+public abstract class Employee implements Payee {
+	
+	
+
+}
