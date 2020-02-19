@@ -21,16 +21,19 @@ public class TestJavaProject {
 			System.out.println(questions.question);
 			System.out.println(Arrays.toString(questions.options));
 			int atbilde = sc.nextInt();
-			
-			while (atbilde != questions.answer) {
+			String regex = "^([1-4])";
+			String data = Integer.toString(atbilde);
+			while (atbilde != questions.answer && (!(data.matches(regex)))) {
 					System.out.println("Try again! Tip: " + questions.tip);
-			atbilde = sc.nextInt();
-			}
-					System.out.println("nais");
-		}
-				}
+					
+					atbilde = sc.nextInt();
 			
-		
+				System.out.println("nais");
+					
+					}
+		}
+		}
+	
 
 	private static Questions[] GetQuestions() {
 	Questions[] returnArray = new Questions[10];
@@ -41,7 +44,7 @@ public class TestJavaProject {
 	returnArray[1] = new Questions("What is JDK?", options.options2, 1, Tips.tip2);
 	returnArray[2] = new Questions("Which one isn't access modifier in Java?", options.options3, 4, Tips.tip3);
 	returnArray[3] = new Questions("When arrays are used?", options.options4, 4, Tips.tip4);
-	returnArray[4] = new Questions("What you will see on console when enter: System.out.println(null)?", options.options5, 4, Tips.tip5);
+	returnArray[4] = new Questions("What you will see on console when enter: System.out.println(null)?", options.options5, 3, Tips.tip5);
 	returnArray[5] = new Questions("Why Java program needs Java main method?", options.options6, 1, Tips.tip6);
 	returnArray[6] = new Questions("Why we use package in Java?", options.options7, 4, Tips.tip7);
 	returnArray[7] = new Questions("Some Java Reserved Keywords are: abstract, boolean, break, case, class, enum, native, private, strictfp, super, throw, throne, void, while. Which word is wrong (not Keyword)?", options.options8, 4, Tips.tip8);
