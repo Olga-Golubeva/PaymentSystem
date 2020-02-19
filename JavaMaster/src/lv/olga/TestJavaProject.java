@@ -23,17 +23,27 @@ public class TestJavaProject {
 			int atbilde = sc.nextInt();
 			String regex = "^([1-4])";
 			String data = Integer.toString(atbilde);
-			while (atbilde != questions.answer && (!(data.matches(regex)))) {
-					System.out.println("Try again! Tip: " + questions.tip);
-					
-					atbilde = sc.nextInt();
 			
-				System.out.println("nais");
-					
+			while (atbilde != questions.answer) {
+				if(!(data.matches(regex))){
+					System.out.println("Input number from 1 to 4");
 					}
+				System.out.println("Try again! Tip: " + questions.tip);
+			atbilde = sc.nextInt();
+			}
+					System.out.println("nais");
 		}
-		}
+				}
 	
+	
+	public static boolean chechkStriInput(int atbilde){
+		
+		String regex = "^([1-4])";
+		String data = Integer.toString(atbilde);
+		
+		return data.matches(regex);
+		
+	}
 
 	private static Questions[] GetQuestions() {
 	Questions[] returnArray = new Questions[10];
